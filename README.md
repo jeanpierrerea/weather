@@ -1,7 +1,7 @@
 # Weather App
 
 
-Simple weather app in Python
+Simple weather app in Python, interact with terminal. 
 
 
 ### What I learned:
