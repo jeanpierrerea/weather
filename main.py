@@ -8,8 +8,6 @@ JSON_TYPE = "current.json?"
 CITY = "&q=London"
 AQI_YES = "&aqi=yes"
 
-#final_url = BASE_URL + JSON_TYPE + "key=" + "96b89389842e4c14b4e202506232808" + CITY + AQI_YES
-
 def user_input():
     """ Function for User Input"""
     user_input_string = input("Choose a city: ")
@@ -22,5 +20,22 @@ def request_data():
     response = requests.get(final_url, timeout=10)
     return response.json()
 
+def main():
+    """ Function that parses through json data """
+    
+    data_set = request_data()
+
+    # playing around with different values in json
+    test = data_set["location"]["country"]
+
+    current_temp = data_set["current"]["temp_c"]
+
+    # storing current temp in an array
+    emptyArray = []
+    emptyArray.append(current_temp)
+    print(emptyArray)
+
+    return test
+
 if __name__ == "__main__":
-    print(request_data())
+    print(main())
